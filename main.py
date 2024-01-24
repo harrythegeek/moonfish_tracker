@@ -1,5 +1,6 @@
 import os
 import openpyxl
+from openpyxl.styles import PatternFill
 
 def scan_for_initial_assesment(batch):
 
@@ -251,5 +252,28 @@ if __name__ == '__main__':
     print()
     print('Fifth step: TP connection test')
     print('Panels and cells that have TP connection tests taken',completed_tp_scan)
+
+    #Populate the excel file
+
+    input_file=r'C:\Users\Harry.Delalis\PycharmProjects\moonfish_tracker\Moonfish Batch Lifetime.xlsx'
+    output_file=r'C:\Users\Harry.Delalis\PycharmProjects\moonfish_tracker\Moonfish Batch Lifetime.xlsx'
+    workbook = openpyxl.load_workbook(input_file)
+
+    # Select the desired sheet (assuming it's the first sheet, change if needed)
+    sheet = workbook.active
+
+    data_to_color=[(1,23,'FFFF00')]
+    # Iterate through data_to_color and apply color to corresponding cells
+    for row, column, color in data_to_color:
+        cell = sheet.cell(row=row, column=column)
+
+        # Apply the desired color to the cell
+        cell.fill = PatternFill(start_color=color, end_color=color, fill_type="solid")
+
+    # Save the modified workbook to a new file
+    workbook.save(output_file)
+
+
+
 
 
