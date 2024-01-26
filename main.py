@@ -77,9 +77,13 @@ def scan_resistance_check(batch):
     cells_done=[]
     # Access and scan through the data in the Excel file
     for row in sheet.iter_rows(min_row=2, values_only=True):
+        #consider if this need to ber or instead of and
         if row[3] and row[4] and row[5] is not None:
             panel_ID=row[1]
             cell_ID=row[2]
+
+            print('res_panel_ID',panel_ID)
+            print('res_cell_ID',cell_ID)
 
             panels_done.append(panel_ID)
             cells_done.append(cell_ID)
@@ -262,13 +266,193 @@ if __name__ == '__main__':
     # Select the desired sheet (assuming it's the first sheet, change if needed)
     sheet = workbook.active
 
-    data_to_color=[(1,23,'FFFF00')]
-    # Iterate through data_to_color and apply color to corresponding cells
-    for row, column, color in data_to_color:
-        cell = sheet.cell(row=row, column=column)
+    for row in range(15,21):
+        cell_value=sheet[f'D{row}'].value
 
-        # Apply the desired color to the cell
-        cell.fill = PatternFill(start_color=color, end_color=color, fill_type="solid")
+        if cell_value in completed_initial_assesssment:
+            sheet[f'D{row}'].fill=PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    integer_list_images=[int(x) for x in completed_global_motherglass_images]
+
+    for row in range(15,21):
+        cell_value=sheet[f'F{row}'].value
+
+        if cell_value in integer_list_images:
+            sheet[f'F{row}'].fill=PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    for row in range(15,20):
+        cell_value_k_row=sheet[f'K{row}'].value
+        cell_value_l_row=sheet[f'L{row}'].value
+        cell_value_m_row=sheet[f'M{row}'].value
+        cell_value_n_row=sheet[f'N{row}'].value
+
+        if cell_value_n_row in completed_resistance_checks[1]:
+            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_m_row in completed_resistance_checks[1]:
+            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_l_row in completed_resistance_checks[1]:
+            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_k_row in completed_resistance_checks[1]:
+            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    for row in range(25,30):
+        cell_value_k_row=sheet[f'K{row}'].value
+        cell_value_l_row=sheet[f'L{row}'].value
+        cell_value_m_row=sheet[f'M{row}'].value
+        cell_value_n_row=sheet[f'N{row}'].value
+
+        if cell_value_n_row in completed_resistance_checks[3]:
+            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_m_row in completed_resistance_checks[3]:
+            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_l_row in completed_resistance_checks[3]:
+            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_k_row in completed_resistance_checks[3]:
+            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    for row in range(30,35):
+        cell_value_k_row=sheet[f'K{row}'].value
+        cell_value_l_row=sheet[f'L{row}'].value
+        cell_value_m_row=sheet[f'M{row}'].value
+        cell_value_n_row=sheet[f'N{row}'].value
+
+        if cell_value_n_row in completed_resistance_checks[4]:
+            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_m_row in completed_resistance_checks[4]:
+            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_l_row in completed_resistance_checks[4]:
+            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_k_row in completed_resistance_checks[4]:
+            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    for row in range(35,40):
+        cell_value_k_row=sheet[f'K{row}'].value
+        cell_value_l_row=sheet[f'L{row}'].value
+        cell_value_m_row=sheet[f'M{row}'].value
+        cell_value_n_row=sheet[f'N{row}'].value
+
+        if cell_value_n_row in completed_resistance_checks[5]:
+            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_m_row in completed_resistance_checks[5]:
+            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_l_row in completed_resistance_checks[5]:
+            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_k_row in completed_resistance_checks[5]:
+            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    for row in range(40,45):
+        cell_value_k_row=sheet[f'K{row}'].value
+        cell_value_l_row=sheet[f'L{row}'].value
+        cell_value_m_row=sheet[f'M{row}'].value
+        cell_value_n_row=sheet[f'N{row}'].value
+
+        if cell_value_n_row in completed_resistance_checks[6]:
+            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_m_row in completed_resistance_checks[6]:
+            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_l_row in completed_resistance_checks[6]:
+            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+        if cell_value_k_row in completed_resistance_checks[6]:
+            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    #Direct Drive images populate
+
+    #convert to integer equivalent
+
+    try:
+        values_for_first_key=completed_direct_drive_images['01']
+
+        integer_equivalents=[int(value) for value in values_for_first_key]
+
+        for row in range(15,20):
+            cell_value_p_row=sheet[f'P{row}'].value
+            cell_value_s_row=sheet[f'S{row}'].value
+
+            if cell_value_p_row in integer_equivalents:
+                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_s_row in integer_equivalents:
+                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    except KeyError:
+        print('panel missing continue')
+
+
+    try:
+        values_for_first_key = completed_direct_drive_images['02']
+        integer_equivalents = [int(value) for value in values_for_first_key]
+
+        for row in range(20, 25):
+            cell_value_p_row = sheet[f'P{row}'].value
+            cell_value_s_row = sheet[f'S{row}'].value
+            if cell_value_p_row in integer_equivalents:
+                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_s_row in integer_equivalents:
+                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    except KeyError:
+        print('panel missing continue')
+
+        try:
+            values_for_first_key = completed_direct_drive_images['03']
+            integer_equivalents = [int(value) for value in values_for_first_key]
+
+            for row in range(25, 30):
+                cell_value_p_row = sheet[f'P{row}'].value
+                cell_value_s_row = sheet[f'S{row}'].value
+                if cell_value_p_row in integer_equivalents:
+                    sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+                if cell_value_s_row in integer_equivalents:
+                    sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+        except KeyError:
+            print('panel missing continue')
+
+    try:
+        values_for_first_key = completed_direct_drive_images['04']
+        integer_equivalents = [int(value) for value in values_for_first_key]
+
+        for row in range(30, 35):
+            cell_value_p_row = sheet[f'P{row}'].value
+            cell_value_s_row = sheet[f'S{row}'].value
+            if cell_value_p_row in integer_equivalents:
+                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_s_row in integer_equivalents:
+                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    except KeyError:
+        print('panel missing continue')
+
+    try:
+        values_for_first_key = completed_direct_drive_images['05']
+        integer_equivalents = [int(value) for value in values_for_first_key]
+
+        for row in range(35, 40):
+            cell_value_p_row = sheet[f'P{row}'].value
+            cell_value_s_row = sheet[f'S{row}'].value
+            if cell_value_p_row in integer_equivalents:
+                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_s_row in integer_equivalents:
+                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    except KeyError:
+        print('panel missing continue')
+
+    try:
+        values_for_first_key = completed_direct_drive_images['06']
+        integer_equivalents = [int(value) for value in values_for_first_key]
+
+        for row in range(40, 45):
+            cell_value_p_row = sheet[f'P{row}'].value
+            cell_value_s_row = sheet[f'S{row}'].value
+            if cell_value_p_row in integer_equivalents:
+                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_s_row in integer_equivalents:
+                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    except KeyError:
+        print('panel missing continue')
+
+
 
     # Save the modified workbook to a new file
     workbook.save(output_file)
