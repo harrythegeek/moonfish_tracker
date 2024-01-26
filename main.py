@@ -280,6 +280,8 @@ if __name__ == '__main__':
         if cell_value in integer_list_images:
             sheet[f'F{row}'].fill=PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
 
+    #Resistance checks and populate the excel
+
     for row in range(15,20):
         cell_value_k_row=sheet[f'K{row}'].value
         cell_value_l_row=sheet[f'L{row}'].value
@@ -453,10 +455,134 @@ if __name__ == '__main__':
         print('panel missing continue')
 
 
+    #TP_connection populate excel
+    try:
+
+        for row in range(15,20):
+            cell_value_y_row=sheet[f'Y{row}'].value
+            cell_value_z_row=sheet[f'Z{row}'].value
+            cell_value_aa_row=sheet[f'AA{row}'].value
+            cell_value_ab_row=sheet[f'AB{row}'].value
+
+            if cell_value_y_row in completed_tp_scan[1]:
+                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_z_row in completed_tp_scan[1]:
+                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_aa_row in completed_tp_scan[1]:
+                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_ab_row in completed_tp_scan[1]:
+                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+    except KeyError:
+        print('panel not done continue')
+
+    try:
+
+        for row in range(20,25):
+            cell_value_y_row=sheet[f'Y{row}'].value
+            cell_value_z_row=sheet[f'Z{row}'].value
+            cell_value_aa_row=sheet[f'AA{row}'].value
+            cell_value_ab_row=sheet[f'AB{row}'].value
+
+            if cell_value_y_row in completed_tp_scan[2]:
+                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_z_row in completed_tp_scan[2]:
+                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_aa_row in completed_tp_scan[2]:
+                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_ab_row in completed_tp_scan[2]:
+                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    except KeyError:
+        print('panel not done continue')
+
+    try:
+
+        for row in range(25, 30):
+            cell_value_y_row = sheet[f'Y{row}'].value
+            cell_value_z_row = sheet[f'Z{row}'].value
+            cell_value_aa_row = sheet[f'AA{row}'].value
+            cell_value_ab_row = sheet[f'AB{row}'].value
+
+            if cell_value_y_row in completed_tp_scan[3]:
+                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_z_row in completed_tp_scan[3]:
+                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_aa_row in completed_tp_scan[3]:
+                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_ab_row in completed_tp_scan[3]:
+                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+    except KeyError:
+        print('panel not done continue')
+
+    try:
+
+        for row in range(30, 35):
+            cell_value_y_row = sheet[f'Y{row}'].value
+            cell_value_z_row = sheet[f'Z{row}'].value
+            cell_value_aa_row = sheet[f'AA{row}'].value
+            cell_value_ab_row = sheet[f'AB{row}'].value
+
+            if cell_value_y_row in completed_tp_scan[3]:
+                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_z_row in completed_tp_scan[3]:
+                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_aa_row in completed_tp_scan[3]:
+                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_ab_row in completed_tp_scan[3]:
+                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+    except KeyError:
+        print('panel not done continue')
+
+    try:
+
+        for row in range(35, 40):
+            cell_value_y_row = sheet[f'Y{row}'].value
+            cell_value_z_row = sheet[f'Z{row}'].value
+            cell_value_aa_row = sheet[f'AA{row}'].value
+            cell_value_ab_row = sheet[f'AB{row}'].value
+
+            if cell_value_y_row in completed_tp_scan[3]:
+                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_z_row in completed_tp_scan[3]:
+                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_aa_row in completed_tp_scan[3]:
+                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_ab_row in completed_tp_scan[3]:
+                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+    except KeyError:
+        print('panel not done continue')
+
+    try:
+
+        for row in range(40, 45):
+            cell_value_y_row = sheet[f'Y{row}'].value
+            cell_value_z_row = sheet[f'Z{row}'].value
+            cell_value_aa_row = sheet[f'AA{row}'].value
+            cell_value_ab_row = sheet[f'AB{row}'].value
+
+            if cell_value_y_row in completed_tp_scan[3]:
+                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_z_row in completed_tp_scan[3]:
+                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_aa_row in completed_tp_scan[3]:
+                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            if cell_value_ab_row in completed_tp_scan[3]:
+                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+
+    except KeyError:
+        print('panel not done continue')
+
+
+
+
+
+
+
+
+
 
     # Save the modified workbook to a new file
     workbook.save(output_file)
-
 
 
 
