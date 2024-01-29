@@ -282,304 +282,81 @@ if __name__ == '__main__':
 
     #Resistance checks and populate the excel
 
-    for row in range(15,20):
-        cell_value_k_row=sheet[f'K{row}'].value
-        cell_value_l_row=sheet[f'L{row}'].value
-        cell_value_m_row=sheet[f'M{row}'].value
-        cell_value_n_row=sheet[f'N{row}'].value
+    excel_coordinates=((15,20),(20,25),(25,30),(30,35),(35,40),(40,45))
+    count=1
+    for j in excel_coordinates:
+        try:
+            for row in range(*j):
+                cell_value_k_row=sheet[f'K{row}'].value
+                cell_value_l_row=sheet[f'L{row}'].value
+                cell_value_m_row=sheet[f'M{row}'].value
+                cell_value_n_row=sheet[f'N{row}'].value
 
-        if cell_value_n_row in completed_resistance_checks[1]:
-            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_m_row in completed_resistance_checks[1]:
-            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_l_row in completed_resistance_checks[1]:
-            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_k_row in completed_resistance_checks[1]:
-            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+                if cell_value_n_row in completed_resistance_checks[count]:
+                    sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+                if cell_value_m_row in completed_resistance_checks[count]:
+                    sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+                if cell_value_l_row in completed_resistance_checks[count]:
+                    sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+                if cell_value_k_row in completed_resistance_checks[count]:
+                    sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            count+=1
+        except KeyError:
+            print('panel not done continue')
+            count+=1
 
-    for row in range(25,30):
-        cell_value_k_row=sheet[f'K{row}'].value
-        cell_value_l_row=sheet[f'L{row}'].value
-        cell_value_m_row=sheet[f'M{row}'].value
-        cell_value_n_row=sheet[f'N{row}'].value
-
-        if cell_value_n_row in completed_resistance_checks[3]:
-            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_m_row in completed_resistance_checks[3]:
-            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_l_row in completed_resistance_checks[3]:
-            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_k_row in completed_resistance_checks[3]:
-            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    for row in range(30,35):
-        cell_value_k_row=sheet[f'K{row}'].value
-        cell_value_l_row=sheet[f'L{row}'].value
-        cell_value_m_row=sheet[f'M{row}'].value
-        cell_value_n_row=sheet[f'N{row}'].value
-
-        if cell_value_n_row in completed_resistance_checks[4]:
-            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_m_row in completed_resistance_checks[4]:
-            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_l_row in completed_resistance_checks[4]:
-            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_k_row in completed_resistance_checks[4]:
-            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    for row in range(35,40):
-        cell_value_k_row=sheet[f'K{row}'].value
-        cell_value_l_row=sheet[f'L{row}'].value
-        cell_value_m_row=sheet[f'M{row}'].value
-        cell_value_n_row=sheet[f'N{row}'].value
-
-        if cell_value_n_row in completed_resistance_checks[5]:
-            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_m_row in completed_resistance_checks[5]:
-            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_l_row in completed_resistance_checks[5]:
-            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_k_row in completed_resistance_checks[5]:
-            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    for row in range(40,45):
-        cell_value_k_row=sheet[f'K{row}'].value
-        cell_value_l_row=sheet[f'L{row}'].value
-        cell_value_m_row=sheet[f'M{row}'].value
-        cell_value_n_row=sheet[f'N{row}'].value
-
-        if cell_value_n_row in completed_resistance_checks[6]:
-            sheet[f'N{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_m_row in completed_resistance_checks[6]:
-            sheet[f'M{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_l_row in completed_resistance_checks[6]:
-            sheet[f'L{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-        if cell_value_k_row in completed_resistance_checks[6]:
-            sheet[f'K{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
 
     #Direct Drive images populate
 
     #convert to integer equivalent
 
-    try:
-        values_for_first_key=completed_direct_drive_images['01']
-
-        integer_equivalents=[int(value) for value in values_for_first_key]
-
-        for row in range(15,20):
-            cell_value_p_row=sheet[f'P{row}'].value
-            cell_value_s_row=sheet[f'S{row}'].value
-
-            if cell_value_p_row in integer_equivalents:
-                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_s_row in integer_equivalents:
-                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    except KeyError:
-        print('panel missing continue')
-
-
-    try:
-        values_for_first_key = completed_direct_drive_images['02']
-        integer_equivalents = [int(value) for value in values_for_first_key]
-
-        for row in range(20, 25):
-            cell_value_p_row = sheet[f'P{row}'].value
-            cell_value_s_row = sheet[f'S{row}'].value
-            if cell_value_p_row in integer_equivalents:
-                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_s_row in integer_equivalents:
-                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    except KeyError:
-        print('panel missing continue')
-
+    excel_coordinates=((15,20),(20,25),(25,30),(30,35),(35,40),(40,45))
+    count=1
+    iteration_list=('01','02','03','04','05','06')
+    for j in excel_coordinates:
         try:
-            values_for_first_key = completed_direct_drive_images['03']
-            integer_equivalents = [int(value) for value in values_for_first_key]
+            values_for_first_key=completed_direct_drive_images[iteration_list[count-1]]
 
-            for row in range(25, 30):
-                cell_value_p_row = sheet[f'P{row}'].value
-                cell_value_s_row = sheet[f'S{row}'].value
+            integer_equivalents=[int(value) for value in values_for_first_key]
+
+            for row in range(*j):
+                cell_value_p_row=sheet[f'P{row}'].value
+                cell_value_s_row=sheet[f'S{row}'].value
+
                 if cell_value_p_row in integer_equivalents:
                     sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
                 if cell_value_s_row in integer_equivalents:
                     sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
 
+            count+=1
         except KeyError:
             print('panel missing continue')
-
-    try:
-        values_for_first_key = completed_direct_drive_images['04']
-        integer_equivalents = [int(value) for value in values_for_first_key]
-
-        for row in range(30, 35):
-            cell_value_p_row = sheet[f'P{row}'].value
-            cell_value_s_row = sheet[f'S{row}'].value
-            if cell_value_p_row in integer_equivalents:
-                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_s_row in integer_equivalents:
-                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    except KeyError:
-        print('panel missing continue')
-
-    try:
-        values_for_first_key = completed_direct_drive_images['05']
-        integer_equivalents = [int(value) for value in values_for_first_key]
-
-        for row in range(35, 40):
-            cell_value_p_row = sheet[f'P{row}'].value
-            cell_value_s_row = sheet[f'S{row}'].value
-            if cell_value_p_row in integer_equivalents:
-                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_s_row in integer_equivalents:
-                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    except KeyError:
-        print('panel missing continue')
-
-    try:
-        values_for_first_key = completed_direct_drive_images['06']
-        integer_equivalents = [int(value) for value in values_for_first_key]
-
-        for row in range(40, 45):
-            cell_value_p_row = sheet[f'P{row}'].value
-            cell_value_s_row = sheet[f'S{row}'].value
-            if cell_value_p_row in integer_equivalents:
-                sheet[f'P{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_s_row in integer_equivalents:
-                sheet[f'S{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    except KeyError:
-        print('panel missing continue')
-
+            count+=1
 
     #TP_connection populate excel
-    try:
 
-        for row in range(15,20):
-            cell_value_y_row=sheet[f'Y{row}'].value
-            cell_value_z_row=sheet[f'Z{row}'].value
-            cell_value_aa_row=sheet[f'AA{row}'].value
-            cell_value_ab_row=sheet[f'AB{row}'].value
+    excel_coordinates=((15,20),(20,25),(25,30),(30,35),(35,40),(40,45))
+    count=1
+    for j in excel_coordinates:
+        try:
+            for row in range(*j):
+                cell_value_y_row=sheet[f'Y{row}'].value
+                cell_value_z_row=sheet[f'Z{row}'].value
+                cell_value_aa_row=sheet[f'AA{row}'].value
+                cell_value_ab_row=sheet[f'AB{row}'].value
 
-            if cell_value_y_row in completed_tp_scan[1]:
-                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_z_row in completed_tp_scan[1]:
-                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_aa_row in completed_tp_scan[1]:
-                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_ab_row in completed_tp_scan[1]:
-                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-    except KeyError:
-        print('panel not done continue')
-
-    try:
-
-        for row in range(20,25):
-            cell_value_y_row=sheet[f'Y{row}'].value
-            cell_value_z_row=sheet[f'Z{row}'].value
-            cell_value_aa_row=sheet[f'AA{row}'].value
-            cell_value_ab_row=sheet[f'AB{row}'].value
-
-            if cell_value_y_row in completed_tp_scan[2]:
-                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_z_row in completed_tp_scan[2]:
-                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_aa_row in completed_tp_scan[2]:
-                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_ab_row in completed_tp_scan[2]:
-                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    except KeyError:
-        print('panel not done continue')
-
-    try:
-
-        for row in range(25, 30):
-            cell_value_y_row = sheet[f'Y{row}'].value
-            cell_value_z_row = sheet[f'Z{row}'].value
-            cell_value_aa_row = sheet[f'AA{row}'].value
-            cell_value_ab_row = sheet[f'AB{row}'].value
-
-            if cell_value_y_row in completed_tp_scan[3]:
-                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_z_row in completed_tp_scan[3]:
-                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_aa_row in completed_tp_scan[3]:
-                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_ab_row in completed_tp_scan[3]:
-                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-    except KeyError:
-        print('panel not done continue')
-
-    try:
-
-        for row in range(30, 35):
-            cell_value_y_row = sheet[f'Y{row}'].value
-            cell_value_z_row = sheet[f'Z{row}'].value
-            cell_value_aa_row = sheet[f'AA{row}'].value
-            cell_value_ab_row = sheet[f'AB{row}'].value
-
-            if cell_value_y_row in completed_tp_scan[3]:
-                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_z_row in completed_tp_scan[3]:
-                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_aa_row in completed_tp_scan[3]:
-                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_ab_row in completed_tp_scan[3]:
-                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-    except KeyError:
-        print('panel not done continue')
-
-    try:
-
-        for row in range(35, 40):
-            cell_value_y_row = sheet[f'Y{row}'].value
-            cell_value_z_row = sheet[f'Z{row}'].value
-            cell_value_aa_row = sheet[f'AA{row}'].value
-            cell_value_ab_row = sheet[f'AB{row}'].value
-
-            if cell_value_y_row in completed_tp_scan[3]:
-                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_z_row in completed_tp_scan[3]:
-                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_aa_row in completed_tp_scan[3]:
-                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_ab_row in completed_tp_scan[3]:
-                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-    except KeyError:
-        print('panel not done continue')
-
-    try:
-
-        for row in range(40, 45):
-            cell_value_y_row = sheet[f'Y{row}'].value
-            cell_value_z_row = sheet[f'Z{row}'].value
-            cell_value_aa_row = sheet[f'AA{row}'].value
-            cell_value_ab_row = sheet[f'AB{row}'].value
-
-            if cell_value_y_row in completed_tp_scan[3]:
-                sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_z_row in completed_tp_scan[3]:
-                sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_aa_row in completed_tp_scan[3]:
-                sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-            if cell_value_ab_row in completed_tp_scan[3]:
-                sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
-
-    except KeyError:
-        print('panel not done continue')
-
-
-
-
-
-
-
-
-
+                if cell_value_y_row in completed_tp_scan[count]:
+                    sheet[f'Y{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+                if cell_value_z_row in completed_tp_scan[count]:
+                    sheet[f'Z{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+                if cell_value_aa_row in completed_tp_scan[count]:
+                    sheet[f'AA{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+                if cell_value_ab_row in completed_tp_scan[count]:
+                    sheet[f'AB{row}'].fill = PatternFill(start_color='FF00FF00', end_color='FF00FF00', fill_type="solid")
+            count+=1
+        except KeyError:
+            print('panel not done continue')
+            count+=1
 
     # Save the modified workbook to a new file
     workbook.save(output_file)
