@@ -1,6 +1,7 @@
 import os
 import openpyxl
 from openpyxl.styles import PatternFill
+import shutil
 
 def scan_for_initial_assesment(batch):
 
@@ -61,8 +62,9 @@ def scan_resistance_check(batch):
 
     #scan the directory and locate the .xlsx file
     for filename in os.listdir(path):
-        if '.xlsx' and 'resistance_checks' in filename: #make sure you always use a template excel file that NEVER changes name
+        if '.xlsx' and 'Resistance_checks' in filename: #make sure you always use a template excel file that NEVER changes name
             resistance_checks=filename
+            print(resistance_checks)
 
     #join together to get a full directory string
     full_directory=os.path.join(path,resistance_checks)
@@ -221,12 +223,54 @@ def scan_for_tp_connection_test(batch):
 
     return unique_dictionary
 
+def copy_excel_files(source_dir, destination_dir):
+    # Check if both source and destination directories exist
+    if not os.path.exists(source_dir):
+        print(f"Source directory '{source_dir}' does not exist.")
+        return
+    if not os.path.exists(destination_dir):
+        print(f"Destination directory '{destination_dir}' does not exist.")
+        return
 
+    # Get a list of files in the source directory
+    files = os.listdir(source_dir)
+
+    # Copy Excel files one by one
+    for file in files:
+        if file.endswith('.xlsx') or file.endswith('.xls'):
+            source_file = os.path.join(source_dir, file)
+            destination_file = os.path.join(destination_dir, file)
+            if not os.path.exists(destination_file):
+                shutil.copyfile(source_file, destination_file)
+                print(f"Copied '{source_file}' to '{destination_file}'")
+            else:
+                print(f"File '{destination_file}' already exists in the destination directory. Skipping.")
 
 #Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
-    batch='R423'
+    batch='R539'
+
+    #copy excel files in directory if they are not there
+    #resistance + TP_Connection
+    source_directory = r"C:\Users\Harry.Delalis\PycharmProjects\moonfish_tracker\template_tests/electrical"
+
+    destination_directory = r"T:\data\R/" +batch +"/electrical"
+    copy_excel_files(source_directory, destination_directory)
+
+    #copy excel files in directory if they are not there
+    #initial_assessment
+    source_directory = r"C:\Users\Harry.Delalis\PycharmProjects\moonfish_tracker\template_tests\initial_assessment"
+
+    destination_directory = r"T:\data\R/" +batch
+    copy_excel_files(source_directory, destination_directory)
+
+    #copy the batch tracker itself in the data/R folder
+    source_directory= r'C:\Users\Harry.Delalis\PycharmProjects\moonfish_tracker'
+    destination_directory = r"T:\data\R/" + batch
+    copy_excel_files(source_directory, destination_directory)
+
+
 
     #first_step
     completed_initial_assesssment,not_completed_initial_assesssment=scan_for_initial_assesment(batch)
@@ -259,8 +303,8 @@ if __name__ == '__main__':
 
     #Populate the excel file
 
-    input_file=r'C:\Users\Harry.Delalis\PycharmProjects\moonfish_tracker\Moonfish Batch Lifetime.xlsx'
-    output_file=r'C:\Users\Harry.Delalis\PycharmProjects\moonfish_tracker\Moonfish Batch Lifetime.xlsx'
+    input_file=r'T:\data\R\R539\Moonfish Batch Lifetime.xlsx'
+    output_file=r'T:\data\R\R539\Moonfish Batch Lifetime.xlsx'
     workbook = openpyxl.load_workbook(input_file)
 
     # Select the desired sheet (assuming it's the first sheet, change if needed)
